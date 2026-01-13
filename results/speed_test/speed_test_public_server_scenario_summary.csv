@@ -1,0 +1,10 @@
+scenario_id,timestamp,metric,aggregation,actual_value,operator,expected_value,unit,sample_count,passed,verdict
+speed_test_public_server,2026-01-14T03:21:02.174531,download_speed,avg,0,gte,25,mbps,0,False,FAIL
+speed_test_public_server,2026-01-14T03:21:02.174531,download_speed,median,0,gte,20,mbps,0,False,FAIL
+speed_test_public_server,2026-01-14T03:21:02.174531,download_speed,p90,0,gte,15,mbps,0,False,FAIL
+speed_test_public_server,2026-01-14T03:21:02.174531,download_speed,p95,0,gte,10,mbps,0,False,FAIL
+speed_test_public_server,2026-01-14T03:21:02.174531,download_speed,p99,0,gte,5,mbps,0,False,FAIL
+speed_test_public_server,2026-01-14T03:21:02.174531,download_speed,min,0,gte,1,mbps,0,False,FAIL
+speed_test_public_server,2026-01-14T03:21:02.174531,upload_speed,avg,10.07,lte,20,mbps,1,True,PASS
+speed_test_public_server,2026-01-14T03:21:02.174531,upload_speed,max,10.07,lte,25,mbps,1,True,PASS
+speed_test_public_server,2026-01-14T03:21:02.174531,upload_speed,p99,10.07,lte,15,mbps,1,True,PASS

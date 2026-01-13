@@ -1,0 +1,548 @@
+2026-01-12 00:20:22,838 - __main__ - INFO - ======================================================================
+2026-01-12 00:20:22,838 - __main__ - INFO - Starting Speed Test Runner
+2026-01-12 00:20:22,838 - __main__ - INFO - ======================================================================
+2026-01-12 00:20:22,838 - __main__ - INFO - Configuration: ./configurations/main.json
+2026-01-12 00:20:22,838 - __main__ - INFO - Timestamp: 2026-01-12 00:20:22
+2026-01-12 00:20:22,839 - __main__ - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:20:22,839 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:20:22,839 - __main__ - INFO - Starting scenario: speed_test_public_server
+2026-01-12 00:20:22,839 - __main__ - INFO - Description: Speed test results gathered from public server
+2026-01-12 00:20:22,839 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:20:22,839 - __main__ - INFO - Running test iteration 1 for scenario: speed_test_public_server
+2026-01-12 00:20:22,839 - __main__ - INFO - Duration: 5s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:20:22,839 - __main__ - INFO - Testing private server: 192.168.1.1:5000
+2026-01-12 00:20:22,839 - __main__ - INFO - Running command: iperf3 -c 192.168.1.1 -p 5000 -t 5 -J -b 10M
+2026-01-12 00:20:22,850 - __main__ - ERROR - iperf3 failed: 
+2026-01-12 00:20:22,850 - __main__ - WARNING -   Upload: FAILED - failed
+2026-01-12 00:20:22,850 - __main__ - INFO - Running command: iperf3 -c 192.168.1.1 -p 5000 -t 5 -J -R -b 100M
+2026-01-12 00:20:22,857 - __main__ - ERROR - iperf3 failed: 
+2026-01-12 00:20:22,857 - __main__ - WARNING -   Download: FAILED - failed
+2026-01-12 00:20:22,857 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:20:22,857 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 5 -J -b 10M
+2026-01-12 00:20:30,349 - __main__ - INFO -   Upload: 10.07 Mbps
+2026-01-12 00:20:30,349 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 5 -J -R -b 100M
+2026-01-12 00:20:36,890 - __main__ - INFO -   Download: 92.17 Mbps
+2026-01-12 00:20:36,890 - __main__ - INFO - Testing public server: iperf.online.net:5201
+2026-01-12 00:20:36,890 - __main__ - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 5 -J -b 10M
+2026-01-12 00:21:09,620 - __main__ - ERROR - iperf3 test timed out for iperf.online.net:5201
+2026-01-12 00:21:09,621 - __main__ - WARNING -   Upload: FAILED - timeout
+2026-01-12 00:21:09,621 - __main__ - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 5 -J -R -b 100M
+2026-01-12 00:21:42,224 - __main__ - ERROR - iperf3 test timed out for iperf.online.net:5201
+2026-01-12 00:21:42,228 - __main__ - WARNING -   Download: FAILED - timeout
+2026-01-12 00:21:42,228 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:21:42,228 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 50 = 92.17 [PASS]
+2026-01-12 00:21:42,228 - utils.metrics_collector - INFO - Evaluation: upload_speed mean lte 10.0 = 10.07 [FAIL]
+2026-01-12 00:21:42,229 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 50 (actual: 92.17 mbps)
+2026-01-12 00:21:42,229 - __main__ - INFO -   ✗ FAIL: upload_speed [mean] [per_iteration] lte 10.0 (actual: 10.07 mbps)
+2026-01-12 00:21:42,229 - __main__ - INFO - Wrote 6 raw results to results/speed_test/speed_test_public_server_results_20260112_002142.csv
+2026-01-12 00:21:42,229 - __main__ - INFO - Wrote 2 evaluations to results/speed_test/speed_test_public_server_evaluations_20260112_002142.csv
+2026-01-12 00:21:42,230 - __main__ - INFO - Wrote metrics summary to results/speed_test/speed_test_public_server_summary_20260112_002142.json
+2026-01-12 00:21:42,230 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:21:42,230 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:21:42,230 - __main__ - INFO - ======================================================================
+2026-01-12 00:21:42,230 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:21:42,230 - __main__ - INFO - Total Evaluations: 2
+2026-01-12 00:21:42,230 - __main__ - INFO - Passed: 1
+2026-01-12 00:21:42,230 - __main__ - INFO - Failed: 1
+2026-01-12 00:21:42,230 - __main__ - INFO - Success Rate: 50.00%
+2026-01-12 00:21:42,230 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:21:42,230 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:21:42,230 - __main__ - INFO -   Samples: 1
+2026-01-12 00:21:42,231 - __main__ - INFO -   Min: 10.07
+2026-01-12 00:21:42,231 - __main__ - INFO -   Max: 10.07
+2026-01-12 00:21:42,231 - __main__ - INFO -   Mean: 10.07
+2026-01-12 00:21:42,231 - __main__ - INFO -   Median: 10.07
+2026-01-12 00:21:42,231 - __main__ - INFO -   P95: 10.07
+2026-01-12 00:21:42,231 - __main__ - INFO -   Std Dev: 0.00
+2026-01-12 00:21:42,231 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:21:42,231 - __main__ - INFO -   Samples: 1
+2026-01-12 00:21:42,231 - __main__ - INFO -   Min: 92.17
+2026-01-12 00:21:42,231 - __main__ - INFO -   Max: 92.17
+2026-01-12 00:21:42,231 - __main__ - INFO -   Mean: 92.17
+2026-01-12 00:21:42,231 - __main__ - INFO -   Median: 92.17
+2026-01-12 00:21:42,231 - __main__ - INFO -   P95: 92.17
+2026-01-12 00:21:42,231 - __main__ - INFO -   Std Dev: 0.00
+2026-01-12 00:21:42,231 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:21:42,231 - __main__ - INFO - Completed scenario: speed_test_public_server
+2026-01-12 00:21:42,231 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:21:42,231 - __main__ - INFO - Speed Test Runner Completed
+2026-01-12 00:21:42,232 - __main__ - INFO - ======================================================================
+2026-01-12 00:25:15,330 - __main__ - INFO - ======================================================================
+2026-01-12 00:25:15,330 - __main__ - INFO - Starting Speed Test Runner
+2026-01-12 00:25:15,331 - __main__ - INFO - ======================================================================
+2026-01-12 00:25:15,331 - __main__ - INFO - Configuration: configurations/test_all_utils.json
+2026-01-12 00:25:15,331 - __main__ - INFO - Timestamp: 2026-01-12 00:25:15
+2026-01-12 00:25:15,331 - __main__ - INFO - Found 6 enabled speed_test scenario(s)
+2026-01-12 00:25:15,331 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:25:15,331 - __main__ - INFO - Starting scenario: quick_aggregation_test
+2026-01-12 00:25:15,331 - __main__ - INFO - Description: Quick test of ALL aggregation methods: mean, median, p90, p95, p99, min, max, std_dev
+2026-01-12 00:25:15,331 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:25:15,331 - __main__ - INFO - Running test iteration 1 for scenario: quick_aggregation_test
+2026-01-12 00:25:15,331 - __main__ - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:25:15,331 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:25:15,331 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:25:20,633 - __main__ - INFO -   Upload: 10.12 Mbps
+2026-01-12 00:25:20,633 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M
+2026-01-12 00:25:25,362 - __main__ - INFO -   Download: 47.15 Mbps
+2026-01-12 00:25:25,362 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:25:25,362 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 10 = 47.15 [PASS]
+2026-01-12 00:25:25,362 - utils.metrics_collector - INFO - Evaluation: download_speed median gte 10 = 47.15 [PASS]
+2026-01-12 00:25:25,362 - utils.metrics_collector - INFO - Evaluation: download_speed p90 gte 10 = 47.15 [PASS]
+2026-01-12 00:25:25,362 - utils.metrics_collector - INFO - Evaluation: download_speed p95 gte 10 = 47.15 [PASS]
+2026-01-12 00:25:25,362 - utils.metrics_collector - INFO - Evaluation: download_speed p99 gte 10 = 47.15 [PASS]
+2026-01-12 00:25:25,362 - utils.metrics_collector - INFO - Evaluation: download_speed min gte 5 = 47.15 [PASS]
+2026-01-12 00:25:25,363 - utils.metrics_collector - INFO - Evaluation: download_speed max lte 200 = 47.15 [PASS]
+2026-01-12 00:25:25,363 - utils.aggregation - ERROR - Error applying aggregation std_dev: Sample standard deviation requires at least 2 values
+2026-01-12 00:25:25,363 - utils.metrics_collector - ERROR - Error evaluating expectation for download_speed: Sample standard deviation requires at least 2 values
+2026-01-12 00:25:25,363 - utils.metrics_collector - ERROR - Failed to evaluate expectation download_speed: Evaluation failed for download_speed: Sample standard deviation requires at least 2 values
+2026-01-12 00:25:25,363 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 10 (actual: 47.15 mbps)
+2026-01-12 00:25:25,363 - __main__ - INFO -   ✓ PASS: download_speed [median] [per_iteration] gte 10 (actual: 47.15 mbps)
+2026-01-12 00:25:25,363 - __main__ - INFO -   ✓ PASS: download_speed [p90] [per_iteration] gte 10 (actual: 47.15 mbps)
+2026-01-12 00:25:25,363 - __main__ - INFO -   ✓ PASS: download_speed [p95] [per_iteration] gte 10 (actual: 47.15 mbps)
+2026-01-12 00:25:25,363 - __main__ - INFO -   ✓ PASS: download_speed [p99] [per_iteration] gte 10 (actual: 47.15 mbps)
+2026-01-12 00:25:25,363 - __main__ - INFO -   ✓ PASS: download_speed [min] [per_iteration] gte 5 (actual: 47.15 mbps)
+2026-01-12 00:25:25,363 - __main__ - INFO -   ✓ PASS: download_speed [max] [per_iteration] lte 200 (actual: 47.15 mbps)
+2026-01-12 00:25:25,363 - __main__ - ERROR - Error running scenario quick_aggregation_test: 'operator'
+Traceback (most recent call last):
+  File "/home/shikhar/LoadTest/src/test_protocols/iperf/speed_test.py", line 621, in run
+    self.run_single_test_iteration(scenario, iteration=1)
+  File "/home/shikhar/LoadTest/src/test_protocols/iperf/speed_test.py", line 413, in run_single_test_iteration
+    f"{eval_result['operator']} {eval_result['expected_value']} "
+       ~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'operator'
+2026-01-12 00:25:25,368 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:25:25,368 - __main__ - INFO - Starting scenario: quick_operator_test
+2026-01-12 00:25:25,368 - __main__ - INFO - Description: Quick test of ALL operators: gte, lte, gt, lt, eq, neq, between
+2026-01-12 00:25:25,368 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:25:25,368 - __main__ - INFO - Running test iteration 1 for scenario: quick_operator_test
+2026-01-12 00:25:25,368 - __main__ - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:25:25,368 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:25:25,368 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:25:29,818 - __main__ - INFO -   Upload: 10.14 Mbps
+2026-01-12 00:25:29,818 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M
+2026-01-12 00:25:34,573 - __main__ - INFO -   Download: 84.19 Mbps
+2026-01-12 00:25:34,573 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:25:34,573 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 65.67 [PASS]
+2026-01-12 00:25:34,573 - utils.metrics_collector - INFO - Evaluation: download_speed mean lte 200 = 65.67 [PASS]
+2026-01-12 00:25:34,573 - utils.metrics_collector - INFO - Evaluation: download_speed mean gt 1 = 65.67 [PASS]
+2026-01-12 00:25:34,573 - utils.metrics_collector - INFO - Evaluation: download_speed mean lt 500 = 65.67 [PASS]
+2026-01-12 00:25:34,574 - utils.metrics_collector - INFO - Evaluation: download_speed mean neq 0 = 65.67 [PASS]
+2026-01-12 00:25:34,574 - utils.metrics_collector - INFO - Evaluation: download_speed mean between [1, 200] = 65.67 [PASS]
+2026-01-12 00:25:34,574 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 65.67 mbps)
+2026-01-12 00:25:34,574 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] lte 200 (actual: 65.67 mbps)
+2026-01-12 00:25:34,574 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gt 1 (actual: 65.67 mbps)
+2026-01-12 00:25:34,574 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] lt 500 (actual: 65.67 mbps)
+2026-01-12 00:25:34,574 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] neq 0 (actual: 65.67 mbps)
+2026-01-12 00:25:34,574 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] between [1, 200] (actual: 65.67 mbps)
+2026-01-12 00:25:34,574 - __main__ - INFO - Wrote 4 raw results to results/utils_test/quick_operator_test_results_20260112_002534.csv
+2026-01-12 00:25:34,575 - __main__ - INFO - Wrote 13 evaluations to results/utils_test/quick_operator_test_evaluations_20260112_002534.csv
+2026-01-12 00:25:34,575 - __main__ - INFO - Wrote metrics summary to results/utils_test/quick_operator_test_summary_20260112_002534.json
+2026-01-12 00:25:34,575 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:25:34,575 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:25:34,575 - __main__ - INFO - ======================================================================
+2026-01-12 00:25:34,575 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:25:34,575 - __main__ - INFO - Total Evaluations: 13
+2026-01-12 00:25:34,575 - __main__ - INFO - Passed: 13
+2026-01-12 00:25:34,575 - __main__ - INFO - Failed: 0
+2026-01-12 00:25:34,575 - __main__ - INFO - Success Rate: 100.00%
+2026-01-12 00:25:34,575 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:25:34,575 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:25:34,575 - __main__ - INFO -   Samples: 2
+2026-01-12 00:25:34,576 - __main__ - INFO -   Min: 10.12
+2026-01-12 00:25:34,576 - __main__ - INFO -   Max: 10.14
+2026-01-12 00:25:34,576 - __main__ - INFO -   Mean: 10.13
+2026-01-12 00:25:34,576 - __main__ - INFO -   Median: 10.13
+2026-01-12 00:25:34,576 - __main__ - INFO -   P95: 10.14
+2026-01-12 00:25:34,576 - __main__ - INFO -   Std Dev: 0.01
+2026-01-12 00:25:34,576 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:25:34,576 - __main__ - INFO -   Samples: 2
+2026-01-12 00:25:34,576 - __main__ - INFO -   Min: 47.15
+2026-01-12 00:25:34,576 - __main__ - INFO -   Max: 84.19
+2026-01-12 00:25:34,576 - __main__ - INFO -   Mean: 65.67
+2026-01-12 00:25:34,576 - __main__ - INFO -   Median: 65.67
+2026-01-12 00:25:34,576 - __main__ - INFO -   P95: 82.34
+2026-01-12 00:25:34,576 - __main__ - INFO -   Std Dev: 26.19
+2026-01-12 00:25:34,576 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:25:34,576 - __main__ - INFO - Completed scenario: quick_operator_test
+2026-01-12 00:25:34,576 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:25:34,576 - __main__ - INFO - Starting scenario: quick_evaluation_scope_test
+2026-01-12 00:25:34,576 - __main__ - INFO - Description: Quick test of ALL evaluation scopes: per_iteration, aggregate, windowed
+2026-01-12 00:25:34,577 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:25:34,577 - __main__ - INFO - Running test iteration 1 for scenario: quick_evaluation_scope_test
+2026-01-12 00:25:34,577 - __main__ - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:25:34,577 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:25:34,577 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:25:37,705 - __main__ - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:25:37,705 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:25:41,097 - __main__ - INFO -   Download: 62.16 Mbps
+2026-01-12 00:25:41,098 - __main__ - INFO - Testing public server: iperf.online.net:5201
+2026-01-12 00:25:41,098 - __main__ - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -b 10M
+2026-01-12 00:25:41,585 - __main__ - ERROR - iperf3 failed: 
+2026-01-12 00:25:41,586 - __main__ - WARNING -   Upload: FAILED - failed
+2026-01-12 00:25:41,586 - __main__ - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:25:42,129 - __main__ - ERROR - iperf3 failed: 
+2026-01-12 00:25:42,129 - __main__ - WARNING -   Download: FAILED - failed
+2026-01-12 00:25:42,129 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:25:42,129 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 64.50 [PASS]
+2026-01-12 00:25:42,129 - utils.metrics_collector - INFO - Evaluation: download_speed p95 gte 10 = 81.99 [PASS]
+2026-01-12 00:25:42,129 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 64.50 [PASS]
+2026-01-12 00:25:42,129 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 64.50 mbps)
+2026-01-12 00:25:42,130 - __main__ - INFO -   ✓ PASS: download_speed [p95] [aggregate] gte 10 (actual: 81.99 mbps)
+2026-01-12 00:25:42,130 - __main__ - INFO -   ✓ PASS: download_speed [mean] [windowed] gte 5 (actual: 64.50 mbps)
+2026-01-12 00:25:42,130 - __main__ - INFO - Wrote 8 raw results to results/utils_test/quick_evaluation_scope_test_results_20260112_002542.csv
+2026-01-12 00:25:42,130 - __main__ - INFO - Wrote 16 evaluations to results/utils_test/quick_evaluation_scope_test_evaluations_20260112_002542.csv
+2026-01-12 00:25:42,130 - __main__ - INFO - Wrote metrics summary to results/utils_test/quick_evaluation_scope_test_summary_20260112_002542.json
+2026-01-12 00:25:42,130 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:25:42,130 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:25:42,131 - __main__ - INFO - ======================================================================
+2026-01-12 00:25:42,131 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:25:42,131 - __main__ - INFO - Total Evaluations: 16
+2026-01-12 00:25:42,131 - __main__ - INFO - Passed: 16
+2026-01-12 00:25:42,131 - __main__ - INFO - Failed: 0
+2026-01-12 00:25:42,131 - __main__ - INFO - Success Rate: 100.00%
+2026-01-12 00:25:42,131 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:25:42,131 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:25:42,131 - __main__ - INFO -   Samples: 3
+2026-01-12 00:25:42,131 - __main__ - INFO -   Min: 10.12
+2026-01-12 00:25:42,131 - __main__ - INFO -   Max: 10.48
+2026-01-12 00:25:42,131 - __main__ - INFO -   Mean: 10.25
+2026-01-12 00:25:42,131 - __main__ - INFO -   Median: 10.14
+2026-01-12 00:25:42,131 - __main__ - INFO -   P95: 10.45
+2026-01-12 00:25:42,131 - __main__ - INFO -   Std Dev: 0.20
+2026-01-12 00:25:42,131 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:25:42,132 - __main__ - INFO -   Samples: 3
+2026-01-12 00:25:42,132 - __main__ - INFO -   Min: 47.15
+2026-01-12 00:25:42,132 - __main__ - INFO -   Max: 84.19
+2026-01-12 00:25:42,132 - __main__ - INFO -   Mean: 64.50
+2026-01-12 00:25:42,132 - __main__ - INFO -   Median: 62.16
+2026-01-12 00:25:42,132 - __main__ - INFO -   P95: 81.99
+2026-01-12 00:25:42,132 - __main__ - INFO -   Std Dev: 18.63
+2026-01-12 00:25:42,132 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:25:42,132 - __main__ - INFO - Completed scenario: quick_evaluation_scope_test
+2026-01-12 00:25:42,132 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:25:42,132 - __main__ - INFO - Starting scenario: quick_combined_test
+2026-01-12 00:25:42,132 - __main__ - INFO - Description: Combined test: Multiple aggregations + operators + scopes together
+2026-01-12 00:25:42,132 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:25:42,132 - __main__ - INFO - Running test iteration 1 for scenario: quick_combined_test
+2026-01-12 00:25:42,132 - __main__ - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:25:42,132 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:25:42,132 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:25:43,843 - __main__ - INFO -   Upload: 10.14 Mbps
+2026-01-12 00:25:43,843 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M
+2026-01-12 00:25:44,164 - __main__ - ERROR - iperf3 failed: 
+2026-01-12 00:25:44,164 - __main__ - WARNING -   Download: FAILED - failed
+2026-01-12 00:25:44,164 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:25:44,165 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 10 = 64.50 [PASS]
+2026-01-12 00:25:44,165 - utils.metrics_collector - INFO - Evaluation: download_speed p95 gte 5 = 81.99 [PASS]
+2026-01-12 00:25:44,165 - utils.metrics_collector - INFO - Evaluation: download_speed median between [5, 200] = 62.16 [PASS]
+2026-01-12 00:25:44,165 - utils.metrics_collector - INFO - Evaluation: upload_speed mean lte 15 = 10.22 [PASS]
+2026-01-12 00:25:44,165 - utils.metrics_collector - INFO - Evaluation: upload_speed std_dev lt 10 = 0.17 [PASS]
+2026-01-12 00:25:44,165 - utils.metrics_collector - INFO - Evaluation: upload_speed min gt 1 = 10.12 [PASS]
+2026-01-12 00:25:44,165 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 10 (actual: 64.50 mbps)
+2026-01-12 00:25:44,165 - __main__ - INFO -   ✓ PASS: download_speed [p95] [aggregate] gte 5 (actual: 81.99 mbps)
+2026-01-12 00:25:44,165 - __main__ - INFO -   ✓ PASS: download_speed [median] [aggregate] between [5, 200] (actual: 62.16 mbps)
+2026-01-12 00:25:44,165 - __main__ - INFO -   ✓ PASS: upload_speed [mean] [per_iteration] lte 15 (actual: 10.22 mbps)
+2026-01-12 00:25:44,165 - __main__ - INFO -   ✓ PASS: upload_speed [std_dev] [aggregate] lt 10 (actual: 0.17 mbps)
+2026-01-12 00:25:44,165 - __main__ - INFO -   ✓ PASS: upload_speed [min] [aggregate] gt 1 (actual: 10.12 mbps)
+2026-01-12 00:25:44,166 - __main__ - INFO - Wrote 10 raw results to results/utils_test/quick_combined_test_results_20260112_002544.csv
+2026-01-12 00:25:44,171 - __main__ - INFO - Wrote 22 evaluations to results/utils_test/quick_combined_test_evaluations_20260112_002544.csv
+2026-01-12 00:25:44,171 - __main__ - INFO - Wrote metrics summary to results/utils_test/quick_combined_test_summary_20260112_002544.json
+2026-01-12 00:25:44,171 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:25:44,171 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:25:44,171 - __main__ - INFO - ======================================================================
+2026-01-12 00:25:44,171 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:25:44,171 - __main__ - INFO - Total Evaluations: 22
+2026-01-12 00:25:44,171 - __main__ - INFO - Passed: 22
+2026-01-12 00:25:44,171 - __main__ - INFO - Failed: 0
+2026-01-12 00:25:44,171 - __main__ - INFO - Success Rate: 100.00%
+2026-01-12 00:25:44,172 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:25:44,172 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:25:44,172 - __main__ - INFO -   Samples: 4
+2026-01-12 00:25:44,172 - __main__ - INFO -   Min: 10.12
+2026-01-12 00:25:44,172 - __main__ - INFO -   Max: 10.48
+2026-01-12 00:25:44,172 - __main__ - INFO -   Mean: 10.22
+2026-01-12 00:25:44,172 - __main__ - INFO -   Median: 10.14
+2026-01-12 00:25:44,172 - __main__ - INFO -   P95: 10.43
+2026-01-12 00:25:44,172 - __main__ - INFO -   Std Dev: 0.17
+2026-01-12 00:25:44,172 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:25:44,172 - __main__ - INFO -   Samples: 3
+2026-01-12 00:25:44,172 - __main__ - INFO -   Min: 47.15
+2026-01-12 00:25:44,172 - __main__ - INFO -   Max: 84.19
+2026-01-12 00:25:44,172 - __main__ - INFO -   Mean: 64.50
+2026-01-12 00:25:44,172 - __main__ - INFO -   Median: 62.16
+2026-01-12 00:25:44,172 - __main__ - INFO -   P95: 81.99
+2026-01-12 00:25:44,172 - __main__ - INFO -   Std Dev: 18.63
+2026-01-12 00:25:44,173 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:25:44,173 - __main__ - INFO - Completed scenario: quick_combined_test
+2026-01-12 00:25:44,173 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:25:44,173 - __main__ - INFO - Starting scenario: quick_multi_server_test
+2026-01-12 00:25:44,173 - __main__ - INFO - Description: Test with multiple servers to generate varied metrics
+2026-01-12 00:25:44,173 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:25:44,173 - __main__ - INFO - Running test iteration 1 for scenario: quick_multi_server_test
+2026-01-12 00:25:44,173 - __main__ - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:25:44,173 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:25:44,173 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:25:47,353 - __main__ - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:25:47,353 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:25:50,486 - __main__ - INFO -   Download: 64.17 Mbps
+2026-01-12 00:25:50,486 - __main__ - INFO - Testing public server: iperf.online.net:5201
+2026-01-12 00:25:50,486 - __main__ - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -b 10M
+2026-01-12 00:25:53,913 - __main__ - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:25:53,913 - __main__ - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:25:57,776 - __main__ - INFO -   Download: 67.88 Mbps
+2026-01-12 00:25:57,776 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:25:57,777 - utils.metrics_collector - INFO - Evaluation: download_speed p90 gte 10 = 77.67 [PASS]
+2026-01-12 00:25:57,777 - utils.metrics_collector - INFO - Evaluation: download_speed range lt 150 = 37.04 [PASS]
+2026-01-12 00:25:57,777 - utils.metrics_collector - INFO - Evaluation: download_speed count gte 1 = 5.00 [PASS]
+2026-01-12 00:25:57,777 - __main__ - INFO -   ✓ PASS: download_speed [p90] [aggregate] gte 10 (actual: 77.67 mbps)
+2026-01-12 00:25:57,777 - __main__ - INFO -   ✓ PASS: download_speed [range] [aggregate] lt 150 (actual: 37.04 mbps)
+2026-01-12 00:25:57,777 - __main__ - INFO -   ✓ PASS: download_speed [count] [aggregate] gte 1 (actual: 5.00 tests)
+2026-01-12 00:25:57,777 - __main__ - INFO - Wrote 14 raw results to results/utils_test/quick_multi_server_test_results_20260112_002557.csv
+2026-01-12 00:25:57,778 - __main__ - INFO - Wrote 25 evaluations to results/utils_test/quick_multi_server_test_evaluations_20260112_002557.csv
+2026-01-12 00:25:57,778 - __main__ - INFO - Wrote metrics summary to results/utils_test/quick_multi_server_test_summary_20260112_002557.json
+2026-01-12 00:25:57,778 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:25:57,778 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:25:57,778 - __main__ - INFO - ======================================================================
+2026-01-12 00:25:57,778 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:25:57,778 - __main__ - INFO - Total Evaluations: 25
+2026-01-12 00:25:57,778 - __main__ - INFO - Passed: 25
+2026-01-12 00:25:57,778 - __main__ - INFO - Failed: 0
+2026-01-12 00:25:57,778 - __main__ - INFO - Success Rate: 100.00%
+2026-01-12 00:25:57,778 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:25:57,778 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:25:57,778 - __main__ - INFO -   Samples: 6
+2026-01-12 00:25:57,778 - __main__ - INFO -   Min: 10.12
+2026-01-12 00:25:57,779 - __main__ - INFO -   Max: 10.48
+2026-01-12 00:25:57,779 - __main__ - INFO -   Mean: 10.31
+2026-01-12 00:25:57,779 - __main__ - INFO -   Median: 10.31
+2026-01-12 00:25:57,779 - __main__ - INFO -   P95: 10.48
+2026-01-12 00:25:57,779 - __main__ - INFO -   Std Dev: 0.19
+2026-01-12 00:25:57,779 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:25:57,779 - __main__ - INFO -   Samples: 5
+2026-01-12 00:25:57,779 - __main__ - INFO -   Min: 47.15
+2026-01-12 00:25:57,779 - __main__ - INFO -   Max: 84.19
+2026-01-12 00:25:57,779 - __main__ - INFO -   Mean: 65.11
+2026-01-12 00:25:57,779 - __main__ - INFO -   Median: 64.17
+2026-01-12 00:25:57,779 - __main__ - INFO -   P95: 80.93
+2026-01-12 00:25:57,779 - __main__ - INFO -   Std Dev: 13.27
+2026-01-12 00:25:57,779 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:25:57,779 - __main__ - INFO - Completed scenario: quick_multi_server_test
+2026-01-12 00:25:57,779 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:25:57,779 - __main__ - INFO - Starting scenario: quick_backward_compatibility_test
+2026-01-12 00:25:57,779 - __main__ - INFO - Description: Test backward compatibility with main.json format (no aggregation field)
+2026-01-12 00:25:57,780 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:25:57,780 - __main__ - INFO - Running test iteration 1 for scenario: quick_backward_compatibility_test
+2026-01-12 00:25:57,780 - __main__ - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:25:57,780 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:25:57,780 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:26:00,988 - __main__ - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:26:00,988 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:26:04,430 - __main__ - INFO -   Download: 54.28 Mbps
+2026-01-12 00:26:04,433 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:26:04,434 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 63.31 [PASS]
+2026-01-12 00:26:04,434 - utils.metrics_collector - INFO - Evaluation: upload_speed mean lte 15 = 10.33 [PASS]
+2026-01-12 00:26:04,434 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 63.31 mbps)
+2026-01-12 00:26:04,434 - __main__ - INFO -   ✓ PASS: upload_speed [mean] [per_iteration] lte 15 (actual: 10.33 mbps)
+2026-01-12 00:26:04,434 - __main__ - INFO - Wrote 16 raw results to results/utils_test/quick_backward_compatibility_test_results_20260112_002604.csv
+2026-01-12 00:26:04,434 - __main__ - INFO - Wrote 27 evaluations to results/utils_test/quick_backward_compatibility_test_evaluations_20260112_002604.csv
+2026-01-12 00:26:04,435 - __main__ - INFO - Wrote metrics summary to results/utils_test/quick_backward_compatibility_test_summary_20260112_002604.json
+2026-01-12 00:26:04,435 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:26:04,435 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:26:04,435 - __main__ - INFO - ======================================================================
+2026-01-12 00:26:04,435 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:26:04,435 - __main__ - INFO - Total Evaluations: 27
+2026-01-12 00:26:04,435 - __main__ - INFO - Passed: 27
+2026-01-12 00:26:04,435 - __main__ - INFO - Failed: 0
+2026-01-12 00:26:04,435 - __main__ - INFO - Success Rate: 100.00%
+2026-01-12 00:26:04,435 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:26:04,435 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:26:04,435 - __main__ - INFO -   Samples: 7
+2026-01-12 00:26:04,435 - __main__ - INFO -   Min: 10.12
+2026-01-12 00:26:04,435 - __main__ - INFO -   Max: 10.48
+2026-01-12 00:26:04,436 - __main__ - INFO -   Mean: 10.33
+2026-01-12 00:26:04,436 - __main__ - INFO -   Median: 10.48
+2026-01-12 00:26:04,436 - __main__ - INFO -   P95: 10.48
+2026-01-12 00:26:04,436 - __main__ - INFO -   Std Dev: 0.19
+2026-01-12 00:26:04,436 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:26:04,436 - __main__ - INFO -   Samples: 6
+2026-01-12 00:26:04,436 - __main__ - INFO -   Min: 47.15
+2026-01-12 00:26:04,436 - __main__ - INFO -   Max: 84.19
+2026-01-12 00:26:04,436 - __main__ - INFO -   Mean: 63.31
+2026-01-12 00:26:04,436 - __main__ - INFO -   Median: 63.16
+2026-01-12 00:26:04,436 - __main__ - INFO -   P95: 80.11
+2026-01-12 00:26:04,436 - __main__ - INFO -   Std Dev: 12.66
+2026-01-12 00:26:04,436 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:26:04,436 - __main__ - INFO - Completed scenario: quick_backward_compatibility_test
+2026-01-12 00:26:04,436 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:26:04,436 - __main__ - INFO - Speed Test Runner Completed
+2026-01-12 00:26:04,436 - __main__ - INFO - ======================================================================
+2026-01-12 00:29:15,860 - __main__ - INFO - ======================================================================
+2026-01-12 00:29:15,861 - __main__ - INFO - Starting Speed Test Runner
+2026-01-12 00:29:15,861 - __main__ - INFO - ======================================================================
+2026-01-12 00:29:15,861 - __main__ - INFO - Configuration: configurations/test_all_utils.json
+2026-01-12 00:29:15,861 - __main__ - INFO - Timestamp: 2026-01-12 00:29:15
+2026-01-12 00:29:15,861 - __main__ - INFO - Found 7 enabled speed_test scenario(s)
+2026-01-12 00:29:15,861 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:29:15,862 - __main__ - INFO - Starting scenario: quick_scheduler_test
+2026-01-12 00:29:15,862 - __main__ - INFO - Description: TEST SCHEDULER: Runs in next 1 minute to test start_time and test_scheduler.py
+2026-01-12 00:29:15,862 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:29:15,862 - __main__ - INFO - Running test iteration 1 for scenario: quick_scheduler_test
+2026-01-12 00:29:15,862 - __main__ - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:29:15,862 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:29:15,862 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:29:20,181 - __main__ - INFO -   Upload: 10.46 Mbps
+2026-01-12 00:29:20,181 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:29:24,137 - __main__ - INFO -   Download: 57.91 Mbps
+2026-01-12 00:29:24,137 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:29:24,137 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 57.91 [PASS]
+2026-01-12 00:29:24,137 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 57.91 mbps)
+2026-01-12 00:29:24,142 - __main__ - INFO - Wrote 2 raw results to results/utils_test/quick_scheduler_test_results_20260112_002924.csv
+2026-01-12 00:29:24,142 - __main__ - INFO - Wrote 1 evaluations to results/utils_test/quick_scheduler_test_evaluations_20260112_002924.csv
+2026-01-12 00:29:24,143 - __main__ - INFO - Wrote metrics summary to results/utils_test/quick_scheduler_test_summary_20260112_002924.json
+2026-01-12 00:29:24,143 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:29:24,143 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:29:24,143 - __main__ - INFO - ======================================================================
+2026-01-12 00:29:24,143 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:29:24,143 - __main__ - INFO - Total Evaluations: 1
+2026-01-12 00:29:24,143 - __main__ - INFO - Passed: 1
+2026-01-12 00:29:24,143 - __main__ - INFO - Failed: 0
+2026-01-12 00:29:24,143 - __main__ - INFO - Success Rate: 100.00%
+2026-01-12 00:29:24,143 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:29:24,143 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:29:24,143 - __main__ - INFO -   Samples: 1
+2026-01-12 00:29:24,143 - __main__ - INFO -   Min: 10.46
+2026-01-12 00:29:24,143 - __main__ - INFO -   Max: 10.46
+2026-01-12 00:29:24,143 - __main__ - INFO -   Mean: 10.46
+2026-01-12 00:29:24,143 - __main__ - INFO -   Median: 10.46
+2026-01-12 00:29:24,143 - __main__ - INFO -   P95: 10.46
+2026-01-12 00:29:24,144 - __main__ - INFO -   Std Dev: 0.00
+2026-01-12 00:29:24,144 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:29:24,144 - __main__ - INFO -   Samples: 1
+2026-01-12 00:29:24,144 - __main__ - INFO -   Min: 57.91
+2026-01-12 00:29:24,144 - __main__ - INFO -   Max: 57.91
+2026-01-12 00:29:24,144 - __main__ - INFO -   Mean: 57.91
+2026-01-12 00:29:24,144 - __main__ - INFO -   Median: 57.91
+2026-01-12 00:29:24,144 - __main__ - INFO -   P95: 57.91
+2026-01-12 00:29:24,144 - __main__ - INFO -   Std Dev: 0.00
+2026-01-12 00:29:24,144 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:29:24,144 - __main__ - INFO - Completed scenario: quick_scheduler_test
+2026-01-12 00:29:24,144 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:29:24,144 - __main__ - INFO - Starting scenario: quick_aggregation_test
+2026-01-12 00:29:24,144 - __main__ - INFO - Description: Quick test of ALL aggregation methods: mean, median, p90, p95, p99, min, max, std_dev
+2026-01-12 00:29:24,144 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:29:24,144 - __main__ - INFO - Running test iteration 1 for scenario: quick_aggregation_test
+2026-01-12 00:29:24,144 - __main__ - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:29:24,145 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:29:24,145 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:29:29,027 - __main__ - INFO -   Upload: 10.13 Mbps
+2026-01-12 00:29:29,028 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M
+2026-01-12 00:29:33,841 - __main__ - INFO -   Download: 0.00 Mbps
+2026-01-12 00:29:33,841 - __main__ - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 10 = 28.95 [PASS]
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed median gte 10 = 28.95 [PASS]
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed p90 gte 10 = 52.12 [PASS]
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed p95 gte 10 = 55.01 [PASS]
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed p99 gte 10 = 57.33 [PASS]
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed min gte 5 = 0.00 [FAIL]
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed max lte 200 = 57.91 [PASS]
+2026-01-12 00:29:33,842 - utils.metrics_collector - INFO - Evaluation: download_speed std_dev lte 50 = 40.95 [PASS]
+2026-01-12 00:29:33,842 - __main__ - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 10 (actual: 28.95 mbps)
+2026-01-12 00:29:33,842 - __main__ - INFO -   ✓ PASS: download_speed [median] [per_iteration] gte 10 (actual: 28.95 mbps)
+2026-01-12 00:29:33,842 - __main__ - INFO -   ✓ PASS: download_speed [p90] [per_iteration] gte 10 (actual: 52.12 mbps)
+2026-01-12 00:29:33,843 - __main__ - INFO -   ✓ PASS: download_speed [p95] [per_iteration] gte 10 (actual: 55.01 mbps)
+2026-01-12 00:29:33,843 - __main__ - INFO -   ✓ PASS: download_speed [p99] [per_iteration] gte 10 (actual: 57.33 mbps)
+2026-01-12 00:29:33,843 - __main__ - INFO -   ✗ FAIL: download_speed [min] [per_iteration] gte 5 (actual: 0.00 mbps)
+2026-01-12 00:29:33,843 - __main__ - INFO -   ✓ PASS: download_speed [max] [per_iteration] lte 200 (actual: 57.91 mbps)
+2026-01-12 00:29:33,843 - __main__ - INFO -   ✓ PASS: download_speed [std_dev] [per_iteration] lte 50 (actual: 40.95 mbps)
+2026-01-12 00:29:33,843 - __main__ - INFO - Wrote 4 raw results to results/utils_test/quick_aggregation_test_results_20260112_002933.csv
+2026-01-12 00:29:33,843 - __main__ - INFO - Wrote 9 evaluations to results/utils_test/quick_aggregation_test_evaluations_20260112_002933.csv
+2026-01-12 00:29:33,844 - __main__ - INFO - Wrote metrics summary to results/utils_test/quick_aggregation_test_summary_20260112_002933.json
+2026-01-12 00:29:33,844 - __main__ - INFO - 
+======================================================================
+2026-01-12 00:29:33,844 - __main__ - INFO - TEST SUMMARY
+2026-01-12 00:29:33,844 - __main__ - INFO - ======================================================================
+2026-01-12 00:29:33,844 - __main__ - INFO - Total Metrics: 2
+2026-01-12 00:29:33,844 - __main__ - INFO - Total Evaluations: 9
+2026-01-12 00:29:33,844 - __main__ - INFO - Passed: 8
+2026-01-12 00:29:33,844 - __main__ - INFO - Failed: 1
+2026-01-12 00:29:33,844 - __main__ - INFO - Success Rate: 88.89%
+2026-01-12 00:29:33,844 - __main__ - INFO - 
+Metric Statistics:
+2026-01-12 00:29:33,844 - __main__ - INFO - 
+upload_speed:
+2026-01-12 00:29:33,844 - __main__ - INFO -   Samples: 2
+2026-01-12 00:29:33,844 - __main__ - INFO -   Min: 10.13
+2026-01-12 00:29:33,844 - __main__ - INFO -   Max: 10.46
+2026-01-12 00:29:33,844 - __main__ - INFO -   Mean: 10.30
+2026-01-12 00:29:33,844 - __main__ - INFO -   Median: 10.30
+2026-01-12 00:29:33,844 - __main__ - INFO -   P95: 10.44
+2026-01-12 00:29:33,844 - __main__ - INFO -   Std Dev: 0.23
+2026-01-12 00:29:33,844 - __main__ - INFO - 
+download_speed:
+2026-01-12 00:29:33,844 - __main__ - INFO -   Samples: 2
+2026-01-12 00:29:33,845 - __main__ - INFO -   Min: 0.00
+2026-01-12 00:29:33,845 - __main__ - INFO -   Max: 57.91
+2026-01-12 00:29:33,845 - __main__ - INFO -   Mean: 28.95
+2026-01-12 00:29:33,845 - __main__ - INFO -   Median: 28.95
+2026-01-12 00:29:33,845 - __main__ - INFO -   P95: 55.01
+2026-01-12 00:29:33,845 - __main__ - INFO -   Std Dev: 40.95
+2026-01-12 00:29:33,845 - __main__ - INFO - ======================================================================
+
+2026-01-12 00:29:33,845 - __main__ - INFO - Completed scenario: quick_aggregation_test
+2026-01-12 00:29:33,845 - __main__ - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:29:33,845 - __main__ - INFO - Starting scenario: quick_operator_test
+2026-01-12 00:29:33,845 - __main__ - INFO - Description: Quick test of ALL operators: gte, lte, gt, lt, eq, neq, between
+2026-01-12 00:29:33,845 - __main__ - INFO - ----------------------------------------------------------------------
+2026-01-12 00:29:33,845 - __main__ - INFO - Running test iteration 1 for scenario: quick_operator_test
+2026-01-12 00:29:33,845 - __main__ - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:29:33,845 - __main__ - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:29:33,846 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:29:39,456 - __main__ - INFO -   Upload: 10.14 Mbps
+2026-01-12 00:29:39,456 - __main__ - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M

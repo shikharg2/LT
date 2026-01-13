@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  db_container:
+    image: db_container
+    environment:
+      POSTGRES_DB: speedtest
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - loadtest_network
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+
+  test_container:
+    image: test-container
+    environment:
+      DB_HOST: db_container
+      DB_PORT: 5432
+      DB_NAME: speedtest
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+    networks:
+      - loadtest_network
+    command: python3 /app/src/test_protocols/iperf/new_speed_test.py --config /app/configurations/main.json
+    depends_on:
+      - db_container
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+
+networks:
+  loadtest_network:
+    driver: overlay
+    attachable: true
+
+volumes:
+  postgres_data:

@@ -1,0 +1,196 @@
+{
+  "global_settings": {
+    "report_path": "./results/speed_test_scenarios/",
+    "log_level": "INFO"
+  },
+  "scenarios": [
+    {
+      "id": "quick_speed_check",
+      "description": "Quick 5-second speed test on single public server",
+      "protocol": "speed_test",
+      "enabled": true,
+
+      "schedule": {
+        "mode": "once",
+        "start_time": "immediate",
+        "duration": 5
+      },
+
+      "parameters": {
+        "public": ["speedtest.shinternet.ch:5201"],
+        "uplink": "10",
+        "downlink": "100"
+      },
+
+      "expectations": [
+        {
+          "metric": "download_speed",
+          "operator": "gte",
+          "value": 10,
+          "unit": "mbps",
+          "evaluation_scope": "per_iteration"
+        },
+        {
+          "metric": "upload_speed",
+          "operator": "lte",
+          "value": 15,
+          "unit": "mbps",
+          "evaluation_scope": "per_iteration"
+        }
+      ]
+    },
+    {
+      "id": "multi_server_comparison",
+      "description": "Compare speeds across multiple public servers with overall averaging",
+      "protocol": "speed_test",
+      "enabled": true,
+
+      "schedule": {
+        "mode": "once",
+        "start_time": "immediate",
+        "duration": 10
+      },
+
+      "parameters": {
+        "public": [
+          "speedtest.shinternet.ch:5201",
+          "iperf.online.net:5201"
+        ],
+        "uplink": "10",
+        "downlink": "100"
+      },
+
+      "expectations": [
+        {
+          "metric": "download_speed",
+          "operator": "gte",
+          "value": 20,
+          "unit": "mbps",
+          "evaluation_scope": "overall"
+        },
+        {
+          "metric": "upload_speed",
+          "operator": "gte",
+          "value": 5,
+          "unit": "mbps",
+          "evaluation_scope": "overall"
+        },
+        {
+          "metric": "download_speed",
+          "operator": "lte",
+          "value": 200,
+          "unit": "mbps",
+          "evaluation_scope": "overall"
+        }
+      ]
+    },
+    {
+      "id": "scheduled_performance_test",
+      "description": "Scheduled test that runs 2 minutes from now with strict requirements",
+      "protocol": "speed_test",
+      "enabled": true,
+
+      "schedule": {
+        "mode": "once",
+        "start_time": "+2m",
+        "duration": 15
+      },
+
+      "parameters": {
+        "public": [
+          "speedtest.shinternet.ch:5201",
+          "iperf.online.net:5201"
+        ],
+        "uplink": "20",
+        "downlink": "200"
+      },
+
+      "expectations": [
+        {
+          "metric": "download_speed",
+          "operator": "between",
+          "value": [10, 250],
+          "unit": "mbps",
+          "evaluation_scope": "per_iteration"
+        },
+        {
+          "metric": "upload_speed",
+          "operator": "between",
+          "value": [5, 25],
+          "unit": "mbps",
+          "evaluation_scope": "per_iteration"
+        },
+        {
+          "metric": "download_speed",
+          "operator": "gte",
+          "value": 50,
+          "unit": "mbps",
+          "evaluation_scope": "overall"
+        },
+        {
+          "metric": "upload_speed",
+          "operator": "neq",
+          "value": 0,
+          "unit": "mbps",
+          "evaluation_scope": "per_iteration"
+        }
+      ]
+    }
+  ],
+
+  "test_documentation": {
+    "purpose": "Multiple speed test scenarios demonstrating different use cases",
+
+    "scenarios_explained": {
+      "quick_speed_check": {
+        "purpose": "Fast baseline check of network performance",
+        "duration": "~5 seconds",
+        "servers": 1,
+        "evaluation": "Individual server results (per_iteration)",
+        "use_case": "Quick health check or CI/CD pipeline validation"
+      },
+
+      "multi_server_comparison": {
+        "purpose": "Compare performance across multiple servers",
+        "duration": "~10 seconds",
+        "servers": 2,
+        "evaluation": "Averaged results across all servers (overall)",
+        "use_case": "Finding best performing server or validating consistency"
+      },
+
+      "scheduled_performance_test": {
+        "purpose": "Comprehensive scheduled test with strict SLAs",
+        "duration": "~15 seconds",
+        "servers": 2,
+        "start_time": "+2m (2 minutes from now)",
+        "evaluation": "Both per_iteration and overall checks",
+        "use_case": "Scheduled monitoring or compliance testing"
+      }
+    },
+
+    "usage": {
+      "run_all_scenarios": "python src/test_protocols/iperf/new_speed_test.py --config configurations/speed_test_scenarios.json",
+      "docker_run": "docker run --rm --network host -v $(pwd)/results:/app/results loadtest-framework python src/test_protocols/iperf/new_speed_test.py --config configurations/speed_test_scenarios.json"
+    },
+
+    "expected_behavior": {
+      "scenario_1": "Runs immediately, tests 1 server, per-iteration evaluation",
+      "scenario_2": "Runs immediately after scenario 1, tests 2 servers, overall averaging",
+      "scenario_3": "Waits 2 minutes, then runs with both per_iteration and overall checks"
+    },
+
+    "output_location": "./results/speed_test_scenarios/",
+
+    "evaluation_scopes_explained": {
+      "per_iteration": "Each server's results evaluated separately - get individual pass/fail for each",
+      "overall": "Results from all servers averaged together - single pass/fail for all combined"
+    },
+
+    "operators_used": {
+      "gte": "Greater than or equal (>=) - minimum performance threshold",
+      "lte": "Less than or equal (<=) - maximum performance threshold",
+      "between": "Range check - value must be within [min, max]",
+      "neq": "Not equal (!=) - ensure non-zero results"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Load Test Framework Dependencies
+
+
+
+# JSON configuration handling (built-in, listed for documentation)
+# json - built-in
+
+# Date and time handling (built-in, listed for documentation)
+# datetime - built-in
+
+# Threading and signal handling (built-in, listed for documentation)
+# threading - built-in
+# signal - built-in
+
+# Path handling (built-in, listed for documentation)
+# pathlib - built-in
+
+# Type hints (built-in, listed for documentation)
+# typing - built-in
+schedule>=1.2.0  # For flexible human-readable scheduling (test_scheduler.py)
+psycopg2-binary>=2.9.0  # PostgreSQL adapter for Python
+docker>=7.0.0  # Docker SDK for Python

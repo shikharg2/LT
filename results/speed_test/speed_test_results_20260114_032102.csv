@@ -1,0 +1,7 @@
+timestamp,scenario_id,iteration,server_type,server,port,test_type,status,mbps,bits_per_second,bytes,retransmits,jitter_ms,error
+2026-01-14T03:19:30.112919,speed_test_public_server,1,private,192.168.1.1,5000,upload,failed,0,0,,,,
+2026-01-14T03:19:30.112919,speed_test_public_server,1,private,192.168.1.1,5000,download,failed,0,0,,,,
+2026-01-14T03:19:30.112919,speed_test_public_server,1,public,speedtest.shinternet.ch,5201,upload,success,10.07,10066130.290620247,12582912,0,0,
+2026-01-14T03:19:30.112919,speed_test_public_server,1,public,speedtest.shinternet.ch,5201,download,failed,0,0,,,,
+2026-01-14T03:19:30.112919,speed_test_public_server,1,public,iperf.online.net,5201,upload,timeout,0,0,,,,
+2026-01-14T03:19:30.112919,speed_test_public_server,1,public,iperf.online.net,5201,download,timeout,0,0,,,,

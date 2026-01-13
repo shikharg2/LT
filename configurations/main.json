@@ -1,0 +1,236 @@
+{
+  "global_settings": {
+    "report_path": "./results/speed_test/",
+    "log_level": "INFO"
+  },
+  "scenarios": [
+    {
+      "id": "VoIP_test_20_calls",
+      "description": "Testing VoIP calls for 20 concurrent calls at a time",
+      "protocol": "voip_test",
+      "enabled": true,
+
+      "schedule": {
+        "mode": "every",
+        "interval": 10,
+        "unit": "minutes",
+        "start_time": "immediate",
+        "duration": 10
+      },
+
+      "parameters": {
+            "test_name": "VoIP Concurrent Stress Test - 500 Calls",
+            "server": {
+                "ip": "127.0.0.1",
+                "port": 5060,
+                "transport": "UDP"
+            },
+            "client": {
+                "ip": "127.0.0.1",
+                "port": 5061,
+                "transport": "UDP"
+            },
+            "call_parameters": {
+                "rate": 10,
+                "limit": 100,
+                "call_count": 500,
+                "duration_ms": 1000
+            },
+            "media": {
+                "enabled": true,
+                "rtp_echo": true
+            },
+            "scenarios": {
+                "uac_xml": "scenarios/concurrent/uac_concurrent.xml",
+                "uas_xml": "scenarios/concurrent/uas_concurrent.xml"
+            },
+            "output": {
+                "summary_file": "summary_concurrent_stress.txt",
+                "enable_screen_file": false
+            },
+            "timeout": 600
+        },
+
+      "expectations": [
+        {
+          "metric": "concurrent-calls",
+          "operator": "gte",
+          "value": 20,
+          "unit": "calls"
+        },
+        {
+          "metric": "average-call-length",
+          "aggregation": "all",
+          "operator": "gte",
+          "value": 20,
+          "unit":"seconds",
+          "evaluation_scope": "per_iteration"
+        }
+      ]
+    },
+    {
+        "id": "speed_test_public_server",
+        "description" : "Speed test results gathered from public server",
+        "enabled": true,
+        "protocol": "speed_test",
+        "schedule": {
+            "mode": "once",
+            "start_time": "immediate",
+            "duration": 5,
+            "interval": 10,
+            "unit": "minutes",
+            "recurring_interval": 60,
+            "recurring_times": 1
+        },
+        "parameters": {
+            "private" : ["192.168.1.1:5000"],
+            "public" : [
+                "speedtest.shinternet.ch:5201",
+                "iperf.online.net:5201"
+
+            ],
+            "uplink" : "10",
+            "downlink" : "100"
+        },
+      "expectations": [
+        {
+            "_comment": "=== PER_ITERATION SCOPE: Each server result evaluated individually ===",
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 50,
+            "unit": "mbps",
+            "evaluation_scope": "per_iteration"
+        },
+        {
+            "metric": "upload_speed",
+            "operator": "lte",
+            "value": 12,
+            "unit": "mbps",
+            "evaluation_scope": "per_iteration"
+        },
+        {
+            "_comment": "=== OVERALL SCOPE: Aggregate all servers in one iteration ===",
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 40,
+            "unit": "mbps",
+            "aggregation": "avg",
+            "evaluation_scope": "overall"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 30,
+            "unit": "mbps",
+            "aggregation": "median",
+            "evaluation_scope": "overall"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 20,
+            "unit": "mbps",
+            "aggregation": "p90",
+            "evaluation_scope": "overall"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 15,
+            "unit": "mbps",
+            "aggregation": "p95",
+            "evaluation_scope": "overall"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 10,
+            "unit": "mbps",
+            "aggregation": "min",
+            "evaluation_scope": "overall"
+        },
+        {
+            "metric": "upload_speed",
+            "operator": "lte",
+            "value": 15,
+            "unit": "mbps",
+            "aggregation": "max",
+            "evaluation_scope": "overall"
+        },
+        {
+            "_comment": "=== SCENARIO SCOPE: Aggregate across ALL iterations ===",
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 25,
+            "unit": "mbps",
+            "aggregation": "avg",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 20,
+            "unit": "mbps",
+            "aggregation": "median",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 15,
+            "unit": "mbps",
+            "aggregation": "p90",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 10,
+            "unit": "mbps",
+            "aggregation": "p95",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 5,
+            "unit": "mbps",
+            "aggregation": "p99",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "download_speed",
+            "operator": "gte",
+            "value": 1,
+            "unit": "mbps",
+            "aggregation": "min",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "upload_speed",
+            "operator": "lte",
+            "value": 20,
+            "unit": "mbps",
+            "aggregation": "avg",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "upload_speed",
+            "operator": "lte",
+            "value": 25,
+            "unit": "mbps",
+            "aggregation": "max",
+            "evaluation_scope": "scenario"
+        },
+        {
+            "metric": "upload_speed",
+            "operator": "lte",
+            "value": 15,
+            "unit": "mbps",
+            "aggregation": "p99",
+            "evaluation_scope": "scenario"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+iteration,metric,operator,expected_value,actual_value,unit,evaluation_scope,aggregation,test_index,passed,verdict,scenario_id
+1,download_speed,gte,50,0,mbps,per_iteration,none,0,False,FAIL,speed_test_public_server
+1,download_speed,gte,50,0,mbps,per_iteration,none,1,False,FAIL,speed_test_public_server
+1,download_speed,gte,50,0,mbps,per_iteration,none,2,False,FAIL,speed_test_public_server
+1,upload_speed,lte,12,0,mbps,per_iteration,none,0,True,PASS,speed_test_public_server
+1,upload_speed,lte,12,10.07,mbps,per_iteration,none,1,True,PASS,speed_test_public_server
+1,upload_speed,lte,12,0,mbps,per_iteration,none,2,True,PASS,speed_test_public_server
+1,download_speed,gte,40,0.0,mbps,overall,avg,all,False,FAIL,speed_test_public_server
+1,download_speed,gte,30,0.0,mbps,overall,median,all,False,FAIL,speed_test_public_server
+1,download_speed,gte,20,0.0,mbps,overall,p90,all,False,FAIL,speed_test_public_server
+1,download_speed,gte,15,0.0,mbps,overall,p95,all,False,FAIL,speed_test_public_server
+1,download_speed,gte,10,0.0,mbps,overall,min,all,False,FAIL,speed_test_public_server
+1,upload_speed,lte,15,10.07,mbps,overall,max,all,True,PASS,speed_test_public_server

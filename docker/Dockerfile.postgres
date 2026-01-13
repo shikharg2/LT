@@ -1,0 +1,16 @@
+# Custom PostgreSQL Image with Speed Test Schema
+FROM postgres:15-alpine
+
+# Set environment variables
+ENV POSTGRES_DB=speedtest
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+
+# Copy initialization script
+COPY init_db.sql /docker-entrypoint-initdb.d/01-init_schema.sql
+
+# The postgres image will automatically run all .sql files in /docker-entrypoint-initdb.d/
+# during container initialization
+
+# Expose PostgreSQL port
+EXPOSE 5432

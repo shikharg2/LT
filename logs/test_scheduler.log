@@ -1,0 +1,485 @@
+2026-01-12 00:30:49,506 - test_scheduler - INFO - Starting Test Scheduler...
+2026-01-12 00:30:49,506 - test_scheduler - INFO - Configuration: configurations/test_all_utils.json
+2026-01-12 00:30:49,506 - test_scheduler - INFO - Registered job for scenario 'quick_scheduler_test' with mode: once
+2026-01-12 00:30:49,506 - test_scheduler - INFO - Registered job for scenario 'quick_aggregation_test' with mode: once
+2026-01-12 00:30:49,506 - test_scheduler - INFO - Registered job for scenario 'quick_operator_test' with mode: once
+2026-01-12 00:30:49,506 - test_scheduler - INFO - Registered job for scenario 'quick_evaluation_scope_test' with mode: once
+2026-01-12 00:30:49,506 - test_scheduler - INFO - Registered job for scenario 'quick_combined_test' with mode: once
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Registered job for scenario 'quick_multi_server_test' with mode: once
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Registered job for scenario 'quick_backward_compatibility_test' with mode: once
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Scheduled 'quick_scheduler_test' to run once immediately
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Scheduled 'quick_aggregation_test' to run once immediately
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Scheduled 'quick_operator_test' to run once immediately
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Scheduled 'quick_evaluation_scope_test' to run once immediately
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Scheduled 'quick_combined_test' to run once immediately
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Scheduled 'quick_multi_server_test' to run once immediately
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Scheduled 'quick_backward_compatibility_test' to run once immediately
+2026-01-12 00:30:49,507 - test_scheduler - INFO - Test Scheduler started with 7/7 jobs scheduled
+2026-01-12 00:30:50,520 - test_scheduler - INFO - Executing test for scenario: quick_scheduler_test (run 1/1)
+2026-01-12 00:30:50,520 - test_scheduler - INFO - Starting test execution for scenario: quick_scheduler_test (protocol: speed_test)
+2026-01-12 00:30:50,530 - speed_test - INFO - ======================================================================
+2026-01-12 00:30:50,530 - speed_test - INFO - Starting Speed Test Runner
+2026-01-12 00:30:50,531 - speed_test - INFO - ======================================================================
+2026-01-12 00:30:50,531 - speed_test - INFO - Configuration: configurations/temp_scheduler_config.json
+2026-01-12 00:30:50,531 - speed_test - INFO - Timestamp: 2026-01-12 00:30:50
+2026-01-12 00:30:50,531 - speed_test - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:30:50,531 - speed_test - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:30:50,531 - speed_test - INFO - Starting scenario: quick_scheduler_test
+2026-01-12 00:30:50,531 - speed_test - INFO - Description: TEST SCHEDULER: Runs in next 1 minute to test start_time and test_scheduler.py
+2026-01-12 00:30:50,531 - speed_test - INFO - ----------------------------------------------------------------------
+2026-01-12 00:30:50,531 - speed_test - INFO - Running test iteration 1 for scenario: quick_scheduler_test
+2026-01-12 00:30:50,531 - speed_test - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:30:50,531 - speed_test - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:30:50,531 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:30:54,424 - speed_test - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:30:54,424 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:30:57,821 - speed_test - INFO -   Download: 67.55 Mbps
+2026-01-12 00:30:57,824 - speed_test - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:30:57,824 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 67.55 [PASS]
+2026-01-12 00:30:57,824 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 67.55 mbps)
+2026-01-12 00:30:57,825 - speed_test - INFO - Wrote 2 raw results to results/utils_test/quick_scheduler_test_results_20260112_003057.csv
+2026-01-12 00:30:57,825 - speed_test - INFO - Wrote 1 evaluations to results/utils_test/quick_scheduler_test_evaluations_20260112_003057.csv
+2026-01-12 00:30:57,825 - speed_test - INFO - Wrote metrics summary to results/utils_test/quick_scheduler_test_summary_20260112_003057.json
+2026-01-12 00:30:57,825 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:30:57,825 - speed_test - INFO - TEST SUMMARY
+2026-01-12 00:30:57,825 - speed_test - INFO - ======================================================================
+2026-01-12 00:30:57,825 - speed_test - INFO - Total Metrics: 2
+2026-01-12 00:30:57,825 - speed_test - INFO - Total Evaluations: 1
+2026-01-12 00:30:57,825 - speed_test - INFO - Passed: 1
+2026-01-12 00:30:57,825 - speed_test - INFO - Failed: 0
+2026-01-12 00:30:57,826 - speed_test - INFO - Success Rate: 100.00%
+2026-01-12 00:30:57,826 - speed_test - INFO - 
+Metric Statistics:
+2026-01-12 00:30:57,826 - speed_test - INFO - 
+upload_speed:
+2026-01-12 00:30:57,826 - speed_test - INFO -   Samples: 1
+2026-01-12 00:30:57,826 - speed_test - INFO -   Min: 10.48
+2026-01-12 00:30:57,826 - speed_test - INFO -   Max: 10.48
+2026-01-12 00:30:57,826 - speed_test - INFO -   Mean: 10.48
+2026-01-12 00:30:57,826 - speed_test - INFO -   Median: 10.48
+2026-01-12 00:30:57,826 - speed_test - INFO -   P95: 10.48
+2026-01-12 00:30:57,826 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:30:57,826 - speed_test - INFO - 
+download_speed:
+2026-01-12 00:30:57,826 - speed_test - INFO -   Samples: 1
+2026-01-12 00:30:57,826 - speed_test - INFO -   Min: 67.55
+2026-01-12 00:30:57,826 - speed_test - INFO -   Max: 67.55
+2026-01-12 00:30:57,826 - speed_test - INFO -   Mean: 67.55
+2026-01-12 00:30:57,826 - speed_test - INFO -   Median: 67.55
+2026-01-12 00:30:57,826 - speed_test - INFO -   P95: 67.55
+2026-01-12 00:30:57,827 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:30:57,827 - speed_test - INFO - ======================================================================
+
+2026-01-12 00:30:57,827 - speed_test - INFO - Completed scenario: quick_scheduler_test
+2026-01-12 00:30:57,827 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:30:57,827 - speed_test - INFO - Speed Test Runner Completed
+2026-01-12 00:30:57,827 - speed_test - INFO - ======================================================================
+2026-01-12 00:30:57,827 - test_scheduler - INFO - Speed test completed successfully for scenario: quick_scheduler_test
+2026-01-12 00:30:57,827 - test_scheduler - INFO - Test completed successfully for scenario: quick_scheduler_test
+2026-01-12 00:30:57,827 - test_scheduler - INFO - Reached max runs (1) for scenario: quick_scheduler_test
+2026-01-12 00:30:57,827 - test_scheduler - INFO - Cancelled schedule for scenario: quick_scheduler_test
+2026-01-12 00:30:57,827 - test_scheduler - INFO - Executing test for scenario: quick_aggregation_test (run 1/1)
+2026-01-12 00:30:57,827 - test_scheduler - INFO - Starting test execution for scenario: quick_aggregation_test (protocol: speed_test)
+2026-01-12 00:30:57,828 - speed_test - INFO - ======================================================================
+2026-01-12 00:30:57,828 - speed_test - INFO - Starting Speed Test Runner
+2026-01-12 00:30:57,828 - speed_test - INFO - ======================================================================
+2026-01-12 00:30:57,828 - speed_test - INFO - Configuration: configurations/temp_scheduler_config.json
+2026-01-12 00:30:57,828 - speed_test - INFO - Timestamp: 2026-01-12 00:30:57
+2026-01-12 00:30:57,828 - speed_test - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:30:57,828 - speed_test - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:30:57,828 - speed_test - INFO - Starting scenario: quick_aggregation_test
+2026-01-12 00:30:57,828 - speed_test - INFO - Description: Quick test of ALL aggregation methods: mean, median, p90, p95, p99, min, max, std_dev
+2026-01-12 00:30:57,828 - speed_test - INFO - ----------------------------------------------------------------------
+2026-01-12 00:30:57,828 - speed_test - INFO - Running test iteration 1 for scenario: quick_aggregation_test
+2026-01-12 00:30:57,828 - speed_test - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:30:57,828 - speed_test - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:30:57,829 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:31:01,953 - speed_test - INFO -   Upload: 10.14 Mbps
+2026-01-12 00:31:01,953 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M
+2026-01-12 00:31:06,322 - speed_test - INFO -   Download: 81.41 Mbps
+2026-01-12 00:31:06,322 - speed_test - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:31:06,322 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 10 = 81.41 [PASS]
+2026-01-12 00:31:06,322 - utils.metrics_collector - INFO - Evaluation: download_speed median gte 10 = 81.41 [PASS]
+2026-01-12 00:31:06,323 - utils.metrics_collector - INFO - Evaluation: download_speed p90 gte 10 = 81.41 [PASS]
+2026-01-12 00:31:06,323 - utils.metrics_collector - INFO - Evaluation: download_speed p95 gte 10 = 81.41 [PASS]
+2026-01-12 00:31:06,323 - utils.metrics_collector - INFO - Evaluation: download_speed p99 gte 10 = 81.41 [PASS]
+2026-01-12 00:31:06,323 - utils.metrics_collector - INFO - Evaluation: download_speed min gte 5 = 81.41 [PASS]
+2026-01-12 00:31:06,323 - utils.metrics_collector - INFO - Evaluation: download_speed max lte 200 = 81.41 [PASS]
+2026-01-12 00:31:06,323 - utils.aggregation - ERROR - Error applying aggregation std_dev: Sample standard deviation requires at least 2 values
+2026-01-12 00:31:06,323 - utils.metrics_collector - ERROR - Error evaluating expectation for download_speed: Sample standard deviation requires at least 2 values
+2026-01-12 00:31:06,323 - utils.metrics_collector - ERROR - Failed to evaluate expectation download_speed: Evaluation failed for download_speed: Sample standard deviation requires at least 2 values
+2026-01-12 00:31:06,323 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 10 (actual: 81.41 mbps)
+2026-01-12 00:31:06,323 - speed_test - INFO -   ✓ PASS: download_speed [median] [per_iteration] gte 10 (actual: 81.41 mbps)
+2026-01-12 00:31:06,323 - speed_test - INFO -   ✓ PASS: download_speed [p90] [per_iteration] gte 10 (actual: 81.41 mbps)
+2026-01-12 00:31:06,323 - speed_test - INFO -   ✓ PASS: download_speed [p95] [per_iteration] gte 10 (actual: 81.41 mbps)
+2026-01-12 00:31:06,323 - speed_test - INFO -   ✓ PASS: download_speed [p99] [per_iteration] gte 10 (actual: 81.41 mbps)
+2026-01-12 00:31:06,323 - speed_test - INFO -   ✓ PASS: download_speed [min] [per_iteration] gte 5 (actual: 81.41 mbps)
+2026-01-12 00:31:06,323 - speed_test - INFO -   ✓ PASS: download_speed [max] [per_iteration] lte 200 (actual: 81.41 mbps)
+2026-01-12 00:31:06,324 - speed_test - ERROR - Error running scenario quick_aggregation_test: 'operator'
+Traceback (most recent call last):
+  File "/home/shikhar/LoadTest/./src/test_protocols/iperf/speed_test.py", line 621, in run
+    self.run_single_test_iteration(scenario, iteration=1)
+  File "/home/shikhar/LoadTest/./src/test_protocols/iperf/speed_test.py", line 413, in run_single_test_iteration
+    f"{eval_result['operator']} {eval_result['expected_value']} "
+       ~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'operator'
+2026-01-12 00:31:06,325 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:06,325 - speed_test - INFO - Speed Test Runner Completed
+2026-01-12 00:31:06,325 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:06,325 - test_scheduler - INFO - Speed test completed successfully for scenario: quick_aggregation_test
+2026-01-12 00:31:06,325 - test_scheduler - INFO - Test completed successfully for scenario: quick_aggregation_test
+2026-01-12 00:31:06,325 - test_scheduler - INFO - Reached max runs (1) for scenario: quick_aggregation_test
+2026-01-12 00:31:06,326 - test_scheduler - INFO - Cancelled schedule for scenario: quick_aggregation_test
+2026-01-12 00:31:06,326 - test_scheduler - INFO - Executing test for scenario: quick_operator_test (run 1/1)
+2026-01-12 00:31:06,326 - test_scheduler - INFO - Starting test execution for scenario: quick_operator_test (protocol: speed_test)
+2026-01-12 00:31:06,326 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:06,326 - speed_test - INFO - Starting Speed Test Runner
+2026-01-12 00:31:06,326 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:06,327 - speed_test - INFO - Configuration: configurations/temp_scheduler_config.json
+2026-01-12 00:31:06,327 - speed_test - INFO - Timestamp: 2026-01-12 00:31:06
+2026-01-12 00:31:06,327 - speed_test - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:31:06,327 - speed_test - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:31:06,327 - speed_test - INFO - Starting scenario: quick_operator_test
+2026-01-12 00:31:06,327 - speed_test - INFO - Description: Quick test of ALL operators: gte, lte, gt, lt, eq, neq, between
+2026-01-12 00:31:06,327 - speed_test - INFO - ----------------------------------------------------------------------
+2026-01-12 00:31:06,327 - speed_test - INFO - Running test iteration 1 for scenario: quick_operator_test
+2026-01-12 00:31:06,327 - speed_test - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:31:06,327 - speed_test - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:31:06,327 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:31:10,706 - speed_test - INFO -   Upload: 10.14 Mbps
+2026-01-12 00:31:10,706 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M
+2026-01-12 00:31:15,223 - speed_test - INFO -   Download: 85.50 Mbps
+2026-01-12 00:31:15,224 - speed_test - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:31:15,224 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 85.50 [PASS]
+2026-01-12 00:31:15,224 - utils.metrics_collector - INFO - Evaluation: download_speed mean lte 200 = 85.50 [PASS]
+2026-01-12 00:31:15,224 - utils.metrics_collector - INFO - Evaluation: download_speed mean gt 1 = 85.50 [PASS]
+2026-01-12 00:31:15,224 - utils.metrics_collector - INFO - Evaluation: download_speed mean lt 500 = 85.50 [PASS]
+2026-01-12 00:31:15,224 - utils.metrics_collector - INFO - Evaluation: download_speed mean neq 0 = 85.50 [PASS]
+2026-01-12 00:31:15,224 - utils.metrics_collector - INFO - Evaluation: download_speed mean between [1, 200] = 85.50 [PASS]
+2026-01-12 00:31:15,224 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 85.50 mbps)
+2026-01-12 00:31:15,224 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] lte 200 (actual: 85.50 mbps)
+2026-01-12 00:31:15,224 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gt 1 (actual: 85.50 mbps)
+2026-01-12 00:31:15,224 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] lt 500 (actual: 85.50 mbps)
+2026-01-12 00:31:15,224 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] neq 0 (actual: 85.50 mbps)
+2026-01-12 00:31:15,224 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] between [1, 200] (actual: 85.50 mbps)
+2026-01-12 00:31:15,225 - speed_test - INFO - Wrote 2 raw results to results/utils_test/quick_operator_test_results_20260112_003115.csv
+2026-01-12 00:31:15,225 - speed_test - INFO - Wrote 6 evaluations to results/utils_test/quick_operator_test_evaluations_20260112_003115.csv
+2026-01-12 00:31:15,225 - speed_test - INFO - Wrote metrics summary to results/utils_test/quick_operator_test_summary_20260112_003115.json
+2026-01-12 00:31:15,225 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:15,225 - speed_test - INFO - TEST SUMMARY
+2026-01-12 00:31:15,225 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:15,225 - speed_test - INFO - Total Metrics: 2
+2026-01-12 00:31:15,225 - speed_test - INFO - Total Evaluations: 6
+2026-01-12 00:31:15,225 - speed_test - INFO - Passed: 6
+2026-01-12 00:31:15,225 - speed_test - INFO - Failed: 0
+2026-01-12 00:31:15,225 - speed_test - INFO - Success Rate: 100.00%
+2026-01-12 00:31:15,226 - speed_test - INFO - 
+Metric Statistics:
+2026-01-12 00:31:15,226 - speed_test - INFO - 
+upload_speed:
+2026-01-12 00:31:15,226 - speed_test - INFO -   Samples: 1
+2026-01-12 00:31:15,226 - speed_test - INFO -   Min: 10.14
+2026-01-12 00:31:15,226 - speed_test - INFO -   Max: 10.14
+2026-01-12 00:31:15,226 - speed_test - INFO -   Mean: 10.14
+2026-01-12 00:31:15,226 - speed_test - INFO -   Median: 10.14
+2026-01-12 00:31:15,226 - speed_test - INFO -   P95: 10.14
+2026-01-12 00:31:15,226 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:31:15,226 - speed_test - INFO - 
+download_speed:
+2026-01-12 00:31:15,226 - speed_test - INFO -   Samples: 1
+2026-01-12 00:31:15,226 - speed_test - INFO -   Min: 85.50
+2026-01-12 00:31:15,226 - speed_test - INFO -   Max: 85.50
+2026-01-12 00:31:15,226 - speed_test - INFO -   Mean: 85.50
+2026-01-12 00:31:15,226 - speed_test - INFO -   Median: 85.50
+2026-01-12 00:31:15,226 - speed_test - INFO -   P95: 85.50
+2026-01-12 00:31:15,226 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:31:15,226 - speed_test - INFO - ======================================================================
+
+2026-01-12 00:31:15,226 - speed_test - INFO - Completed scenario: quick_operator_test
+2026-01-12 00:31:15,227 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:15,227 - speed_test - INFO - Speed Test Runner Completed
+2026-01-12 00:31:15,227 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:15,227 - test_scheduler - INFO - Speed test completed successfully for scenario: quick_operator_test
+2026-01-12 00:31:15,227 - test_scheduler - INFO - Test completed successfully for scenario: quick_operator_test
+2026-01-12 00:31:15,227 - test_scheduler - INFO - Reached max runs (1) for scenario: quick_operator_test
+2026-01-12 00:31:15,227 - test_scheduler - INFO - Cancelled schedule for scenario: quick_operator_test
+2026-01-12 00:31:15,227 - test_scheduler - INFO - Executing test for scenario: quick_evaluation_scope_test (run 1/1)
+2026-01-12 00:31:15,227 - test_scheduler - INFO - Starting test execution for scenario: quick_evaluation_scope_test (protocol: speed_test)
+2026-01-12 00:31:15,228 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:15,228 - speed_test - INFO - Starting Speed Test Runner
+2026-01-12 00:31:15,228 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:15,228 - speed_test - INFO - Configuration: configurations/temp_scheduler_config.json
+2026-01-12 00:31:15,228 - speed_test - INFO - Timestamp: 2026-01-12 00:31:15
+2026-01-12 00:31:15,228 - speed_test - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:31:15,228 - speed_test - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:31:15,228 - speed_test - INFO - Starting scenario: quick_evaluation_scope_test
+2026-01-12 00:31:15,228 - speed_test - INFO - Description: Quick test of ALL evaluation scopes: per_iteration, aggregate, windowed
+2026-01-12 00:31:15,228 - speed_test - INFO - ----------------------------------------------------------------------
+2026-01-12 00:31:15,228 - speed_test - INFO - Running test iteration 1 for scenario: quick_evaluation_scope_test
+2026-01-12 00:31:15,228 - speed_test - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:31:15,228 - speed_test - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:31:15,228 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:31:16,054 - speed_test - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:31:16,054 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:31:19,188 - speed_test - INFO -   Download: 62.75 Mbps
+2026-01-12 00:31:19,189 - speed_test - INFO - Testing public server: iperf.online.net:5201
+2026-01-12 00:31:19,189 - speed_test - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -b 10M
+2026-01-12 00:31:19,911 - speed_test - ERROR - iperf3 failed: 
+2026-01-12 00:31:19,911 - speed_test - WARNING -   Upload: FAILED - failed
+2026-01-12 00:31:19,911 - speed_test - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:31:20,267 - speed_test - ERROR - iperf3 failed: 
+2026-01-12 00:31:20,267 - speed_test - WARNING -   Download: FAILED - failed
+2026-01-12 00:31:20,267 - speed_test - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:31:20,267 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 62.75 [PASS]
+2026-01-12 00:31:20,267 - utils.metrics_collector - INFO - Evaluation: download_speed p95 gte 10 = 62.75 [PASS]
+2026-01-12 00:31:20,268 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 62.75 [PASS]
+2026-01-12 00:31:20,268 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 62.75 mbps)
+2026-01-12 00:31:20,268 - speed_test - INFO -   ✓ PASS: download_speed [p95] [aggregate] gte 10 (actual: 62.75 mbps)
+2026-01-12 00:31:20,268 - speed_test - INFO -   ✓ PASS: download_speed [mean] [windowed] gte 5 (actual: 62.75 mbps)
+2026-01-12 00:31:20,268 - speed_test - INFO - Wrote 4 raw results to results/utils_test/quick_evaluation_scope_test_results_20260112_003120.csv
+2026-01-12 00:31:20,268 - speed_test - INFO - Wrote 3 evaluations to results/utils_test/quick_evaluation_scope_test_evaluations_20260112_003120.csv
+2026-01-12 00:31:20,268 - speed_test - INFO - Wrote metrics summary to results/utils_test/quick_evaluation_scope_test_summary_20260112_003120.json
+2026-01-12 00:31:20,269 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:20,269 - speed_test - INFO - TEST SUMMARY
+2026-01-12 00:31:20,269 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:20,269 - speed_test - INFO - Total Metrics: 2
+2026-01-12 00:31:20,269 - speed_test - INFO - Total Evaluations: 3
+2026-01-12 00:31:20,269 - speed_test - INFO - Passed: 3
+2026-01-12 00:31:20,269 - speed_test - INFO - Failed: 0
+2026-01-12 00:31:20,269 - speed_test - INFO - Success Rate: 100.00%
+2026-01-12 00:31:20,269 - speed_test - INFO - 
+Metric Statistics:
+2026-01-12 00:31:20,269 - speed_test - INFO - 
+upload_speed:
+2026-01-12 00:31:20,269 - speed_test - INFO -   Samples: 1
+2026-01-12 00:31:20,269 - speed_test - INFO -   Min: 10.48
+2026-01-12 00:31:20,269 - speed_test - INFO -   Max: 10.48
+2026-01-12 00:31:20,269 - speed_test - INFO -   Mean: 10.48
+2026-01-12 00:31:20,269 - speed_test - INFO -   Median: 10.48
+2026-01-12 00:31:20,269 - speed_test - INFO -   P95: 10.48
+2026-01-12 00:31:20,269 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:31:20,270 - speed_test - INFO - 
+download_speed:
+2026-01-12 00:31:20,270 - speed_test - INFO -   Samples: 1
+2026-01-12 00:31:20,270 - speed_test - INFO -   Min: 62.75
+2026-01-12 00:31:20,270 - speed_test - INFO -   Max: 62.75
+2026-01-12 00:31:20,270 - speed_test - INFO -   Mean: 62.75
+2026-01-12 00:31:20,270 - speed_test - INFO -   Median: 62.75
+2026-01-12 00:31:20,270 - speed_test - INFO -   P95: 62.75
+2026-01-12 00:31:20,270 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:31:20,270 - speed_test - INFO - ======================================================================
+
+2026-01-12 00:31:20,270 - speed_test - INFO - Completed scenario: quick_evaluation_scope_test
+2026-01-12 00:31:20,270 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:20,270 - speed_test - INFO - Speed Test Runner Completed
+2026-01-12 00:31:20,270 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:20,270 - test_scheduler - INFO - Speed test completed successfully for scenario: quick_evaluation_scope_test
+2026-01-12 00:31:20,270 - test_scheduler - INFO - Test completed successfully for scenario: quick_evaluation_scope_test
+2026-01-12 00:31:20,270 - test_scheduler - INFO - Reached max runs (1) for scenario: quick_evaluation_scope_test
+2026-01-12 00:31:20,270 - test_scheduler - INFO - Cancelled schedule for scenario: quick_evaluation_scope_test
+2026-01-12 00:31:20,271 - test_scheduler - INFO - Executing test for scenario: quick_combined_test (run 1/1)
+2026-01-12 00:31:20,271 - test_scheduler - INFO - Starting test execution for scenario: quick_combined_test (protocol: speed_test)
+2026-01-12 00:31:20,271 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:20,271 - speed_test - INFO - Starting Speed Test Runner
+2026-01-12 00:31:20,271 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:20,271 - speed_test - INFO - Configuration: configurations/temp_scheduler_config.json
+2026-01-12 00:31:20,271 - speed_test - INFO - Timestamp: 2026-01-12 00:31:20
+2026-01-12 00:31:20,272 - speed_test - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:31:20,272 - speed_test - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:31:20,272 - speed_test - INFO - Starting scenario: quick_combined_test
+2026-01-12 00:31:20,272 - speed_test - INFO - Description: Combined test: Multiple aggregations + operators + scopes together
+2026-01-12 00:31:20,272 - speed_test - INFO - ----------------------------------------------------------------------
+2026-01-12 00:31:20,272 - speed_test - INFO - Running test iteration 1 for scenario: quick_combined_test
+2026-01-12 00:31:20,272 - speed_test - INFO - Duration: 3s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:31:20,272 - speed_test - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:31:20,272 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -b 10M
+2026-01-12 00:31:24,731 - speed_test - INFO -   Upload: 10.14 Mbps
+2026-01-12 00:31:24,734 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 3 -J -R -b 100M
+2026-01-12 00:31:29,168 - speed_test - INFO -   Download: 81.10 Mbps
+2026-01-12 00:31:29,169 - speed_test - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:31:29,169 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 10 = 81.10 [PASS]
+2026-01-12 00:31:29,169 - utils.metrics_collector - INFO - Evaluation: download_speed p95 gte 5 = 81.10 [PASS]
+2026-01-12 00:31:29,169 - utils.metrics_collector - INFO - Evaluation: download_speed median between [5, 200] = 81.10 [PASS]
+2026-01-12 00:31:29,169 - utils.metrics_collector - INFO - Evaluation: upload_speed mean lte 15 = 10.14 [PASS]
+2026-01-12 00:31:29,169 - utils.aggregation - ERROR - Error applying aggregation std_dev: Sample standard deviation requires at least 2 values
+2026-01-12 00:31:29,169 - utils.metrics_collector - ERROR - Error evaluating expectation for upload_speed: Sample standard deviation requires at least 2 values
+2026-01-12 00:31:29,169 - utils.metrics_collector - ERROR - Failed to evaluate expectation upload_speed: Evaluation failed for upload_speed: Sample standard deviation requires at least 2 values
+2026-01-12 00:31:29,169 - utils.metrics_collector - INFO - Evaluation: upload_speed min gt 1 = 10.14 [PASS]
+2026-01-12 00:31:29,169 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 10 (actual: 81.10 mbps)
+2026-01-12 00:31:29,170 - speed_test - INFO -   ✓ PASS: download_speed [p95] [aggregate] gte 5 (actual: 81.10 mbps)
+2026-01-12 00:31:29,170 - speed_test - INFO -   ✓ PASS: download_speed [median] [aggregate] between [5, 200] (actual: 81.10 mbps)
+2026-01-12 00:31:29,170 - speed_test - INFO -   ✓ PASS: upload_speed [mean] [per_iteration] lte 15 (actual: 10.14 mbps)
+2026-01-12 00:31:29,170 - speed_test - ERROR - Error running scenario quick_combined_test: 'operator'
+Traceback (most recent call last):
+  File "/home/shikhar/LoadTest/./src/test_protocols/iperf/speed_test.py", line 621, in run
+    self.run_single_test_iteration(scenario, iteration=1)
+  File "/home/shikhar/LoadTest/./src/test_protocols/iperf/speed_test.py", line 413, in run_single_test_iteration
+    f"{eval_result['operator']} {eval_result['expected_value']} "
+       ~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'operator'
+2026-01-12 00:31:29,170 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:29,170 - speed_test - INFO - Speed Test Runner Completed
+2026-01-12 00:31:29,170 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:29,170 - test_scheduler - INFO - Speed test completed successfully for scenario: quick_combined_test
+2026-01-12 00:31:29,170 - test_scheduler - INFO - Test completed successfully for scenario: quick_combined_test
+2026-01-12 00:31:29,170 - test_scheduler - INFO - Reached max runs (1) for scenario: quick_combined_test
+2026-01-12 00:31:29,171 - test_scheduler - INFO - Cancelled schedule for scenario: quick_combined_test
+2026-01-12 00:31:29,171 - test_scheduler - INFO - Executing test for scenario: quick_multi_server_test (run 1/1)
+2026-01-12 00:31:29,171 - test_scheduler - INFO - Starting test execution for scenario: quick_multi_server_test (protocol: speed_test)
+2026-01-12 00:31:29,171 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:29,171 - speed_test - INFO - Starting Speed Test Runner
+2026-01-12 00:31:29,171 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:29,171 - speed_test - INFO - Configuration: configurations/temp_scheduler_config.json
+2026-01-12 00:31:29,171 - speed_test - INFO - Timestamp: 2026-01-12 00:31:29
+2026-01-12 00:31:29,171 - speed_test - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:31:29,172 - speed_test - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:31:29,172 - speed_test - INFO - Starting scenario: quick_multi_server_test
+2026-01-12 00:31:29,172 - speed_test - INFO - Description: Test with multiple servers to generate varied metrics
+2026-01-12 00:31:29,172 - speed_test - INFO - ----------------------------------------------------------------------
+2026-01-12 00:31:29,172 - speed_test - INFO - Running test iteration 1 for scenario: quick_multi_server_test
+2026-01-12 00:31:29,172 - speed_test - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:31:29,172 - speed_test - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:31:29,172 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:31:32,369 - speed_test - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:31:32,369 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:31:35,560 - speed_test - INFO -   Download: 64.29 Mbps
+2026-01-12 00:31:35,560 - speed_test - INFO - Testing public server: iperf.online.net:5201
+2026-01-12 00:31:35,560 - speed_test - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -b 10M
+2026-01-12 00:31:39,193 - speed_test - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:31:39,193 - speed_test - INFO - Running command: iperf3 -c iperf.online.net -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:31:42,948 - speed_test - INFO -   Download: 80.53 Mbps
+2026-01-12 00:31:42,948 - speed_test - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:31:42,949 - utils.metrics_collector - INFO - Evaluation: download_speed p90 gte 10 = 78.91 [PASS]
+2026-01-12 00:31:42,949 - utils.metrics_collector - INFO - Evaluation: download_speed range lt 150 = 16.24 [PASS]
+2026-01-12 00:31:42,949 - utils.metrics_collector - INFO - Evaluation: download_speed count gte 1 = 2.00 [PASS]
+2026-01-12 00:31:42,949 - speed_test - INFO -   ✓ PASS: download_speed [p90] [aggregate] gte 10 (actual: 78.91 mbps)
+2026-01-12 00:31:42,949 - speed_test - INFO -   ✓ PASS: download_speed [range] [aggregate] lt 150 (actual: 16.24 mbps)
+2026-01-12 00:31:42,949 - speed_test - INFO -   ✓ PASS: download_speed [count] [aggregate] gte 1 (actual: 2.00 tests)
+2026-01-12 00:31:42,949 - speed_test - INFO - Wrote 4 raw results to results/utils_test/quick_multi_server_test_results_20260112_003142.csv
+2026-01-12 00:31:42,950 - speed_test - INFO - Wrote 3 evaluations to results/utils_test/quick_multi_server_test_evaluations_20260112_003142.csv
+2026-01-12 00:31:42,950 - speed_test - INFO - Wrote metrics summary to results/utils_test/quick_multi_server_test_summary_20260112_003142.json
+2026-01-12 00:31:42,950 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:42,950 - speed_test - INFO - TEST SUMMARY
+2026-01-12 00:31:42,950 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:42,950 - speed_test - INFO - Total Metrics: 2
+2026-01-12 00:31:42,950 - speed_test - INFO - Total Evaluations: 3
+2026-01-12 00:31:42,950 - speed_test - INFO - Passed: 3
+2026-01-12 00:31:42,950 - speed_test - INFO - Failed: 0
+2026-01-12 00:31:42,950 - speed_test - INFO - Success Rate: 100.00%
+2026-01-12 00:31:42,950 - speed_test - INFO - 
+Metric Statistics:
+2026-01-12 00:31:42,951 - speed_test - INFO - 
+upload_speed:
+2026-01-12 00:31:42,951 - speed_test - INFO -   Samples: 2
+2026-01-12 00:31:42,951 - speed_test - INFO -   Min: 10.48
+2026-01-12 00:31:42,951 - speed_test - INFO -   Max: 10.48
+2026-01-12 00:31:42,951 - speed_test - INFO -   Mean: 10.48
+2026-01-12 00:31:42,951 - speed_test - INFO -   Median: 10.48
+2026-01-12 00:31:42,951 - speed_test - INFO -   P95: 10.48
+2026-01-12 00:31:42,951 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:31:42,951 - speed_test - INFO - 
+download_speed:
+2026-01-12 00:31:42,951 - speed_test - INFO -   Samples: 2
+2026-01-12 00:31:42,951 - speed_test - INFO -   Min: 64.29
+2026-01-12 00:31:42,951 - speed_test - INFO -   Max: 80.53
+2026-01-12 00:31:42,951 - speed_test - INFO -   Mean: 72.41
+2026-01-12 00:31:42,952 - speed_test - INFO -   Median: 72.41
+2026-01-12 00:31:42,952 - speed_test - INFO -   P95: 79.72
+2026-01-12 00:31:42,952 - speed_test - INFO -   Std Dev: 11.48
+2026-01-12 00:31:42,952 - speed_test - INFO - ======================================================================
+
+2026-01-12 00:31:42,952 - speed_test - INFO - Completed scenario: quick_multi_server_test
+2026-01-12 00:31:42,952 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:42,952 - speed_test - INFO - Speed Test Runner Completed
+2026-01-12 00:31:42,952 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:42,952 - test_scheduler - INFO - Speed test completed successfully for scenario: quick_multi_server_test
+2026-01-12 00:31:42,952 - test_scheduler - INFO - Test completed successfully for scenario: quick_multi_server_test
+2026-01-12 00:31:42,952 - test_scheduler - INFO - Reached max runs (1) for scenario: quick_multi_server_test
+2026-01-12 00:31:42,952 - test_scheduler - INFO - Cancelled schedule for scenario: quick_multi_server_test
+2026-01-12 00:31:42,953 - test_scheduler - INFO - Executing test for scenario: quick_backward_compatibility_test (run 1/1)
+2026-01-12 00:31:42,953 - test_scheduler - INFO - Starting test execution for scenario: quick_backward_compatibility_test (protocol: speed_test)
+2026-01-12 00:31:42,953 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:42,953 - speed_test - INFO - Starting Speed Test Runner
+2026-01-12 00:31:42,953 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:42,954 - speed_test - INFO - Configuration: configurations/temp_scheduler_config.json
+2026-01-12 00:31:42,954 - speed_test - INFO - Timestamp: 2026-01-12 00:31:42
+2026-01-12 00:31:42,954 - speed_test - INFO - Found 1 enabled speed_test scenario(s)
+2026-01-12 00:31:42,954 - speed_test - INFO - 
+----------------------------------------------------------------------
+2026-01-12 00:31:42,954 - speed_test - INFO - Starting scenario: quick_backward_compatibility_test
+2026-01-12 00:31:42,954 - speed_test - INFO - Description: Test backward compatibility with main.json format (no aggregation field)
+2026-01-12 00:31:42,954 - speed_test - INFO - ----------------------------------------------------------------------
+2026-01-12 00:31:42,954 - speed_test - INFO - Running test iteration 1 for scenario: quick_backward_compatibility_test
+2026-01-12 00:31:42,954 - speed_test - INFO - Duration: 2s, Uplink: 10Mbps, Downlink: 100Mbps
+2026-01-12 00:31:42,954 - speed_test - INFO - Testing public server: speedtest.shinternet.ch:5201
+2026-01-12 00:31:42,954 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -b 10M
+2026-01-12 00:31:46,114 - speed_test - INFO -   Upload: 10.48 Mbps
+2026-01-12 00:31:46,114 - speed_test - INFO - Running command: iperf3 -c speedtest.shinternet.ch -p 5201 -t 2 -J -R -b 100M
+2026-01-12 00:31:46,889 - speed_test - INFO -   Download: 11.38 Mbps
+2026-01-12 00:31:46,889 - speed_test - INFO - Evaluating expectations for iteration 1
+2026-01-12 00:31:46,890 - utils.metrics_collector - INFO - Evaluation: download_speed mean gte 5 = 11.38 [PASS]
+2026-01-12 00:31:46,890 - utils.metrics_collector - INFO - Evaluation: upload_speed mean lte 15 = 10.48 [PASS]
+2026-01-12 00:31:46,890 - speed_test - INFO -   ✓ PASS: download_speed [mean] [per_iteration] gte 5 (actual: 11.38 mbps)
+2026-01-12 00:31:46,890 - speed_test - INFO -   ✓ PASS: upload_speed [mean] [per_iteration] lte 15 (actual: 10.48 mbps)
+2026-01-12 00:31:46,890 - speed_test - INFO - Wrote 2 raw results to results/utils_test/quick_backward_compatibility_test_results_20260112_003146.csv
+2026-01-12 00:31:46,890 - speed_test - INFO - Wrote 2 evaluations to results/utils_test/quick_backward_compatibility_test_evaluations_20260112_003146.csv
+2026-01-12 00:31:46,890 - speed_test - INFO - Wrote metrics summary to results/utils_test/quick_backward_compatibility_test_summary_20260112_003146.json
+2026-01-12 00:31:46,891 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:46,891 - speed_test - INFO - TEST SUMMARY
+2026-01-12 00:31:46,891 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:46,891 - speed_test - INFO - Total Metrics: 2
+2026-01-12 00:31:46,891 - speed_test - INFO - Total Evaluations: 2
+2026-01-12 00:31:46,891 - speed_test - INFO - Passed: 2
+2026-01-12 00:31:46,891 - speed_test - INFO - Failed: 0
+2026-01-12 00:31:46,891 - speed_test - INFO - Success Rate: 100.00%
+2026-01-12 00:31:46,891 - speed_test - INFO - 
+Metric Statistics:
+2026-01-12 00:31:46,891 - speed_test - INFO - 
+upload_speed:
+2026-01-12 00:31:46,891 - speed_test - INFO -   Samples: 1
+2026-01-12 00:31:46,891 - speed_test - INFO -   Min: 10.48
+2026-01-12 00:31:46,891 - speed_test - INFO -   Max: 10.48
+2026-01-12 00:31:46,891 - speed_test - INFO -   Mean: 10.48
+2026-01-12 00:31:46,891 - speed_test - INFO -   Median: 10.48
+2026-01-12 00:31:46,892 - speed_test - INFO -   P95: 10.48
+2026-01-12 00:31:46,892 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:31:46,892 - speed_test - INFO - 
+download_speed:
+2026-01-12 00:31:46,892 - speed_test - INFO -   Samples: 1
+2026-01-12 00:31:46,892 - speed_test - INFO -   Min: 11.38
+2026-01-12 00:31:46,892 - speed_test - INFO -   Max: 11.38
+2026-01-12 00:31:46,892 - speed_test - INFO -   Mean: 11.38
+2026-01-12 00:31:46,892 - speed_test - INFO -   Median: 11.38
+2026-01-12 00:31:46,892 - speed_test - INFO -   P95: 11.38
+2026-01-12 00:31:46,892 - speed_test - INFO -   Std Dev: 0.00
+2026-01-12 00:31:46,892 - speed_test - INFO - ======================================================================
+
+2026-01-12 00:31:46,892 - speed_test - INFO - Completed scenario: quick_backward_compatibility_test
+2026-01-12 00:31:46,892 - speed_test - INFO - 
+======================================================================
+2026-01-12 00:31:46,892 - speed_test - INFO - Speed Test Runner Completed
+2026-01-12 00:31:46,892 - speed_test - INFO - ======================================================================
+2026-01-12 00:31:46,892 - test_scheduler - INFO - Speed test completed successfully for scenario: quick_backward_compatibility_test
+2026-01-12 00:31:46,893 - test_scheduler - INFO - Test completed successfully for scenario: quick_backward_compatibility_test
+2026-01-12 00:31:46,893 - test_scheduler - INFO - Reached max runs (1) for scenario: quick_backward_compatibility_test
+2026-01-12 00:31:46,893 - test_scheduler - INFO - Cancelled schedule for scenario: quick_backward_compatibility_test
+2026-01-12 00:31:47,895 - test_scheduler - INFO - All scheduled jobs completed
+2026-01-12 00:31:47,895 - test_scheduler - INFO - Stopping Test Scheduler...
+2026-01-12 00:31:47,895 - test_scheduler - INFO - Test Scheduler stopped

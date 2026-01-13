@@ -1,0 +1,36 @@
+{
+  "global_settings": {
+    "report_path": "./results/scheduler_demo/",
+    "log_level": "INFO"
+  },
+  "scenarios": [
+    {
+      "id": "immediate_test",
+      "description": "Test that starts immediately",
+      "protocol": "speed_test",
+      "enabled": true,
+
+      "schedule": {
+        "mode": "once",
+        "start_time": "immediate",
+        "duration": 3
+      },
+
+      "parameters": {
+        "public": ["speedtest.shinternet.ch:5201"],
+        "uplink": "10",
+        "downlink": "100"
+      },
+
+      "expectations": [
+        {
+          "metric": "download_speed",
+          "operator": "gte",
+          "value": 5,
+          "unit": "mbps",
+          "evaluation_scope": "per_iteration"
+        }
+      ]
+    }
+  ]
+}

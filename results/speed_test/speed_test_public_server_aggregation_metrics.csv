@@ -1,0 +1,9 @@
+scenario_id,timestamp,metric,aggregation,value,unit
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,avg,10.07,mbps
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,median,10.07,mbps
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,p90,10.07,mbps
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,p95,10.07,mbps
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,p99,10.07,mbps
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,min,10.07,mbps
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,max,10.07,mbps
+speed_test_public_server,2026-01-14T03:21:02.179698,upload_speed,count,1,samples
